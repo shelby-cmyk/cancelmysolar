@@ -4,6 +4,7 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Cancel My Solar — Get Out of Your Solar Contract</title>
+<link rel="icon" href="favicon.svg" type="image/svg+xml" />
 <meta name="description" content="Stuck in a solar lease, PPA, or loan you regret? Find out if you qualify to cancel, transfer, or reduce your solar contract. Free, no-obligation review." />
 <meta name="robots" content="noindex" /><!-- TEMP: remove this line before going live to allow search indexing -->
 
@@ -85,9 +86,14 @@ header.nav{
   backdrop-filter:saturate(180%) blur(10px);border-bottom:1px solid var(--line);
 }
 .nav-in{display:flex;align-items:center;justify-content:space-between;height:64px}
-.logo{display:flex;align-items:center;gap:.5rem;font-weight:900;font-size:1.18rem;letter-spacing:-.02em;text-decoration:none}
-.logo .sun{width:26px;height:26px;flex:none}
-.logo b{color:var(--brand)}
+.logo{display:flex;align-items:center;gap:.6rem;text-decoration:none}
+.logo .mark{width:38px;height:38px;flex:none;display:block}
+.logo .mark svg{width:100%;height:100%;display:block}
+.wm{display:flex;flex-direction:column;line-height:1}
+.wm-name{font-weight:900;font-size:1.18rem;letter-spacing:-.028em;color:var(--ink)}
+.wm-name b{color:var(--brand);font-weight:900}
+.wm-sub{font-size:.6rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin-top:.22rem}
+@media(max-width:560px){.logo .mark{width:34px;height:34px}.wm-name{font-size:1.05rem}.wm-sub{font-size:.55rem;letter-spacing:.13em}}
 .nav-call{display:flex;align-items:center;gap:.5rem;font-weight:800;color:var(--ink);text-decoration:none;font-size:1.02rem}
 .nav-call svg{width:18px;height:18px}
 .nav-call:hover{color:var(--brand)}
@@ -207,8 +213,9 @@ h2.title{font-size:clamp(1.7rem,3.4vw,2.4rem);letter-spacing:-.025em;line-height
 /* ---------- footer ---------- */
 footer{background:#0b1622;color:#9fb0c2;font-size:.88rem;padding:46px 0 60px}
 footer .ftop{display:flex;justify-content:space-between;gap:28px;flex-wrap:wrap;align-items:flex-start;margin-bottom:26px}
-footer .logo{color:#fff;font-size:1.1rem}
-footer .logo b{color:#5b9bff}
+footer .wm-name{color:#fff}
+footer .wm-name b{color:#5b9bff}
+footer .wm-sub{color:#7e90a4}
 footer .flinks{display:flex;gap:1.4rem;flex-wrap:wrap}
 footer .flinks a{color:#9fb0c2;text-decoration:none}
 footer .flinks a:hover{color:#fff}
@@ -247,9 +254,17 @@ footer .disc p{margin-bottom:.7rem}
 <!-- ============ NAV ============ -->
 <header class="nav">
   <div class="wrap nav-in">
-    <a href="#" class="logo">
-      <svg class="sun" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="4.5" fill="#1f6feb"/><g stroke="#ff8a3d" stroke-width="2" stroke-linecap="round"><path d="M12 1.5v3M12 19.5v3M1.5 12h3M19.5 12h3M4.6 4.6l2.1 2.1M17.3 17.3l2.1 2.1M19.4 4.6l-2.1 2.1M6.7 17.3l-2.1 2.1"/></g></svg>
-      Cancel<b>My</b>Solar
+    <a href="#" class="logo" aria-label="Cancel My Solar — home">
+      <span class="mark">
+        <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Cancel My Solar logo">
+          <defs><linearGradient id="cmsG" x1="6" y1="3" x2="34" y2="36" gradientUnits="userSpaceOnUse"><stop stop-color="#2a7bff"/><stop offset="1" stop-color="#1657c0"/></linearGradient></defs>
+          <path d="M20 3 33 7.4V17c0 8.9-5.4 15.2-13 17.9C12.4 32.2 7 25.9 7 17V7.4L20 3Z" fill="url(#cmsG)"/>
+          <path d="M13 22.6h14" stroke="#fff" stroke-width="2" stroke-linecap="round"/>
+          <path d="M14 22.6a6 6 0 0 1 12 0" fill="#fff"/>
+          <g stroke="#ff8a3d" stroke-width="2" stroke-linecap="round"><path d="M20 14.2v-2.6M14.6 16.6 13 15M25.4 16.6 27 15"/></g>
+        </svg>
+      </span>
+      <span class="wm"><span class="wm-name">Cancel<b>My</b>Solar</span><span class="wm-sub">Solar Contract Review</span></span>
     </a>
     <a href="tel:+18005550123" class="nav-call"><!-- PHONE_NUMBER -->
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
@@ -527,7 +542,18 @@ footer .disc p{margin-bottom:.7rem}
 <footer>
   <div class="wrap">
     <div class="ftop">
-      <a href="#" class="logo">Cancel<b>My</b>Solar</a>
+      <a href="#" class="logo" aria-label="Cancel My Solar — home">
+        <span class="mark">
+          <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Cancel My Solar logo">
+            <defs><linearGradient id="cmsGf" x1="6" y1="3" x2="34" y2="36" gradientUnits="userSpaceOnUse"><stop stop-color="#2a7bff"/><stop offset="1" stop-color="#1657c0"/></linearGradient></defs>
+            <path d="M20 3 33 7.4V17c0 8.9-5.4 15.2-13 17.9C12.4 32.2 7 25.9 7 17V7.4L20 3Z" fill="url(#cmsGf)"/>
+            <path d="M13 22.6h14" stroke="#fff" stroke-width="2" stroke-linecap="round"/>
+            <path d="M14 22.6a6 6 0 0 1 12 0" fill="#fff"/>
+            <g stroke="#ff8a3d" stroke-width="2" stroke-linecap="round"><path d="M20 14.2v-2.6M14.6 16.6 13 15M25.4 16.6 27 15"/></g>
+          </svg>
+        </span>
+        <span class="wm"><span class="wm-name">Cancel<b>My</b>Solar</span><span class="wm-sub">Solar Contract Review</span></span>
+      </a>
       <div class="flinks">
         <a href="tel:+18005550123"><!-- PHONE_NUMBER -->(800) 555-0123</a>
         <a href="privacy.html">Privacy Policy</a>
